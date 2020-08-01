@@ -3,9 +3,21 @@
 <head>
     <title>Position Report</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!--    <meta http-equiv="refresh" content="5;url=location.href">-->
 </head>
 <body>
 
+<script type="text/javascript">
+    window.onload = setupRefresh;
+
+    function setupRefresh() {
+        setTimeout("refreshPage();", 5000); // milliseconds
+    }
+    
+    function refreshPage() {
+        window.location = location.href;
+    }
+</script>
 
 <div class="positionlist" th:unless="${#lists.isEmpty(currentPositions)}">
 
